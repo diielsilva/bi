@@ -88,19 +88,30 @@ class Client
 
     public function storeClient(Client $client)
     {
-        
-            $this->connection = new Connection();
-            $this->connection = $this->connection->openConnection();
-            $this->query = "INSERT INTO clients VALUES (null,?,?,?,?,?,?)";
-            $this->stmt = $this->connection->prepare($this->query);
-            $this->stmt->bindValue(1, $client->getCompanyName());
-            $this->stmt->bindValue(2, $client->getCnpj());
-            $this->stmt->bindValue(3, $client->getName());
-            $this->stmt->bindValue(4, $client->getEmail());
-            $this->stmt->bindValue(5, $client->getTelephone());
-            $this->stmt->bindValue(6, $client->getAddress());
-            $this->stmt->execute();
-            $this->result = $this->stmt->rowCount();
-            return $this->result;
+
+        $this->connection = new Connection();
+        $this->connection = $this->connection->openConnection();
+        $this->query = "INSERT INTO clients VALUES (null,?,?,?,?,?,?)";
+        $this->stmt = $this->connection->prepare($this->query);
+        $this->stmt->bindValue(1, $client->getCompanyName());
+        $this->stmt->bindValue(2, $client->getCnpj());
+        $this->stmt->bindValue(3, $client->getName());
+        $this->stmt->bindValue(4, $client->getEmail());
+        $this->stmt->bindValue(5, $client->getTelephone());
+        $this->stmt->bindValue(6, $client->getAddress());
+        $this->stmt->execute();
+        $this->result = $this->stmt->rowCount();
+        return $this->result;
+    }
+
+    public function listAllClients()
+    {
+        $this->connection = new Connection();
+        $this->connection = $this->connection->openConnection();
+        $this->query = "SELECT * FROM clients";
+        $this->stmt = $this->connection->prepare($this->query);
+        $this->stmt->execute();
+        $this->result = $this->stmt->fetchAll();
+        return $this->result;
     }
 }

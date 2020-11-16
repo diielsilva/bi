@@ -40,4 +40,13 @@ class AdminController
         }
         header("Location: ../views/add_client.php");
     }
+
+    public function resultListAllClients($result)
+    {
+        session_start();
+        if (sizeof($result) > 0) {
+            $_SESSION["clients"] = $result;
+        }
+        header("Location: ../views/list_clients.php");
+    }
 }
