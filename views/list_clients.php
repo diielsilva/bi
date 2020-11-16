@@ -7,6 +7,7 @@ include_once("../php/verify_admin_online.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style_list_clients.css">
     <title>Listar Clientes</title>
 </head>
 
@@ -21,12 +22,12 @@ include_once("../php/verify_admin_online.php");
             <li><a href="../php/logout_admin.php">Sair &nbsp;<span class="fas fa-sign-out-alt"></span></a></li>
         </header>
     </nav>
-    <main>
-        <table>
+    <main class="main">
+        <table border=1 class="table">
             <thead>
                 <h3>Lista de Clientes</h3>
             </thead>
-            <tr>
+            <tr class="first-row">
                 <td>ID</td>
                 <td>Razão Social</td>
                 <td>CNPJ</td>
@@ -49,12 +50,26 @@ include_once("../php/verify_admin_online.php");
                     echo "<td>" . $_SESSION["clients"][$init]["email"] . "</td>";
                     echo "<td>" . $_SESSION["clients"][$init]["telephone"] . "</td>";
                     echo "<td>" . $_SESSION["clients"][$init]["address"] . "</td>";
-                    echo "<td> <form action='' method='get'><button type='submit'>Editar &nbsp;<span></span></form></td>";
+                    echo "<td> <form action='' method='get'><button type='submit' class='edit'>Editar &nbsp;<span class='fas fa-user-edit'></span></form></td>";
+                    echo "<td> <a href='../php/remove_client.php?id=" . $_SESSION["clients"][$init]["id"] . "'><button class='remove'>Remover &nbsp <span class='fas fa-user-times'></span></button></a>";
+                    echo "<td> <form action='' method='get'><button type='submit' class='projects'>Projetos &nbsp;<span class='fas fa-folder-open'></span></form></td>";
                 }
             }
             ?>
         </table>
+        <div>
+            <?php
+            if (isset($_SESSION["error"])) {
+                echo "<p>" . $_SESSION["error"] . "</p>";
+                unset($_SESSION["error"]);
+            } else if (isset($_SESSION["success"])) {
+                echo "<p>" . $_SESSION["success"] . "</p>";
+                unset($_SESSION["success"]);
+            }
+            ?>
+        </div>
     </main>
 </body>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 </html>

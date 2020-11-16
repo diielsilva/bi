@@ -49,4 +49,14 @@ class AdminController
         }
         header("Location: ../views/list_clients.php");
     }
+
+    public function resultRemoveClient($result)
+    {
+        session_start();
+        if ($result == 1) {
+            $_SESSION["success"] = "Cliente removido com sucesso";
+        } else {
+            $_SESSION["error"] = "Cliente vinculado a um projeto";
+        }
+    }
 }
