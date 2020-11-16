@@ -37,13 +37,13 @@ html, body {
     padding: 10px;
 }
 
-.main h3{
+.main h3 {
     margin: 10px;
 }
 
 .table {
     border: none;
-    width: 90%;
+    width: 100%;
     margin: auto;
     border-collapse: collapse;
 }
@@ -58,7 +58,7 @@ html, body {
 }
 
 .first-row {
-   background-image: linear-gradient(to right, black, gray);
+    background-image: linear-gradient(to right, black, gray);
 }
 
 .first-row td {

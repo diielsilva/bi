@@ -17,7 +17,6 @@ include_once("../php/verify_admin_online.php");
             <li><a href="home.php">Início &nbsp;<span class="fas fa-home"></span></a></li>
             <li><a href="add_client.php">Adicionar Cliente &nbsp;<span class="fas fa-user-plus"></span></a></li>
             <li><a href="../php/list_clients.php">Menu de Clientes &nbsp;<span class="fas fa-user-cog"></span></a></li>
-            <li><a href="">Listar Clientes &nbsp;<span class="fas fa-users"></span></a></li>
             <li><a href="../php/logout_admin.php">Sair &nbsp;<span class="fas fa-sign-out-alt"></span></a></li>
         </header>
     </nav>
@@ -36,7 +35,6 @@ include_once("../php/verify_admin_online.php");
                 <td>Endereço</td>
                 <td>Editar</td>
                 <td>Remover</td>
-                <td>Projetos</td>
             </tr>
             <?php
             if (isset($_SESSION["clients"])) {
@@ -51,7 +49,6 @@ include_once("../php/verify_admin_online.php");
                     echo "<td>" . $_SESSION["clients"][$init]["address"] . "</td>";
                     echo "<td> <a href='edit_client.php?id=" . $_SESSION["clients"][$init]["id"] . "'> <button class='edit'>Editar &nbsp;<span class='fas fa-user-edit'></span></button></a></td>";
                     echo "<td> <a href='../php/remove_client.php?id=" . $_SESSION["clients"][$init]["id"] . "'><button class='remove'>Remover &nbsp <span class='fas fa-user-times'></span></button></a>";
-                    echo "<td> <form action='' method='get'><button type='submit' class='projects'>Projetos &nbsp;<span class='fas fa-folder-open'></span></form></td>";
                 }
             }
             unset($_SESSION["clients"]);

@@ -18,7 +18,6 @@ include_once("../php/verify_admin_online.php");
             <li><a href="home.php">Início &nbsp;<span class="fas fa-home"></span></a></li>
             <li><a href="add_client.php">Adicionar Cliente &nbsp;<span class="fas fa-user-plus"></span></a></li>
             <li><a href="../php/list_clients.php">Menu de Clientes &nbsp;<span class="fas fa-user-cog"></span></a></li>
-            <li><a href="">Listar Clientes &nbsp;<span class="fas fa-users"></span></a></li>
             <li><a href="../php/logout_admin.php">Sair &nbsp;<span class="fas fa-sign-out-alt"></span></a></li>
         </header>
     </nav>
