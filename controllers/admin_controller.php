@@ -59,4 +59,15 @@ class AdminController
             $_SESSION["error"] = "Cliente vinculado a um projeto";
         }
     }
+
+    public function resultUpdateClient($result)
+    {
+        session_start();
+        if ($result == 1) {
+            $_SESSION["success"] = "Cliente alterado com sucesso";
+        } else {
+            $_SESSION["error"] = "CNPJ ou email já cadastrado";
+        }
+        header("Location: ../views/edit_client.php?id=" . $_SESSION["id-client"]);
+    }
 }
