@@ -22,8 +22,9 @@ include_once("../php/verify_admin_online.php");
             <li><a href="../php/logout_admin.php">Sair &nbsp;<span class="fas fa-sign-out-alt"></span></a></li>
         </header>
     </nav>
-    <main>
-        <form action="" method="post">
+    <main class="main">
+        <form action="../php/add_client.php" method="post">
+            <h1>Cadastrar Cliente</h1>
             <div>
                 <input type="text" name="company-name" placeholder="Razão Social" minlength="3" required>
             </div>
@@ -48,10 +49,10 @@ include_once("../php/verify_admin_online.php");
         </form>
         <?php
         if (isset($_SESSION["error"])) {
-            echo "<p>" . $_SESSION["error"] . "&nbsp;<span class='fas fa-exclamation-circle'></span></p>";
+            echo "<p class='error'>" . $_SESSION["error"] . "&nbsp;<span class='fas fa-exclamation-circle'></span></p>";
             unset($_SESSION["error"]);
         } else if (isset($_SESSION["success"])) {
-            echo "<p>" . $_SESSION["error"] . "&nbsp;<span class='fas fa-check-circle'></span></p>";
+            echo "<p class='success'>" . $_SESSION["success"] . "&nbsp;<span class='fas fa-check-circle'></span></p>";
             unset($_SESSION["success"]);
         }
         ?>

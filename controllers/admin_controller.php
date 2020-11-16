@@ -33,7 +33,7 @@ class AdminController
     public function resultStoreClient($result)
     {
         session_start();
-        if (sizeof($result) > 0) {
+        if ($result == 1) {
             $_SESSION["success"] = "Cliente cadastrado com sucesso";
         } else {
             $_SESSION["error"] = "CNPJ ou email já cadastrados";
