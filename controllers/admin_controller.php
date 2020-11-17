@@ -79,4 +79,15 @@ class AdminController
         }
         header("Location: ../views/menu_projects.php");
     }
+
+    public function resultStoreProjects($result)
+    {
+        session_start();
+        if ($result > 0) {
+            $_SESSION["success"] = "Projeto cadastrado com sucesso";
+        } else {
+            $_SESSION["error"] = "Erro ao cadastrar projeto, tente novamente";
+        }
+        header("Location: ../views/add_project.php?id=" . $_SESSION["id-client"]);
+    }
 }
