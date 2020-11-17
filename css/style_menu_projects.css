@@ -41,36 +41,48 @@ html, body {
     margin: 10px;
 }
 
-.main input {
+.table {
+    border: none;
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.table td {
     border: none;
     border-bottom: 1px solid gray;
-    width: 300px;
-    margin: 10px;
-    padding: 10px;
+    font-size: 10px;
 }
 
-.main input:focus {
-    outline: none;
+.first-row {
+    background-image: linear-gradient(to right, black, gray);
 }
 
-.main button {
-    margin: 15px;
+.first-row td {
     padding: 10px;
-    background-color: green;
-    border: none;
+    font-weight: bold;
     color: white;
-    border-radius: 3px;
+    font-size: 15px;
+}
+
+.add {
+    padding: 10px;
+    border: none;
+    background-color: green;
     cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    margin: 5px;
+    text-align: center;
 }
 
-.main button:hover {
-    background-color: rgba(0, 128, 0, 0.795);
-}
-
-.success {
-    color: green;
-}
-
-.error {
-    color: red;
+.projects {
+    padding: 10px;
+    border: none;
+    background-color: rgb(235, 235, 34);
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    margin: 5px;
+    text-align: center;
 }

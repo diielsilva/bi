@@ -42,7 +42,6 @@ html, body {
 .main button {
     margin: 15px;
     padding: 10px;
-    font-weight: bold;
     background-color: green;
     border: none;
     color: white;

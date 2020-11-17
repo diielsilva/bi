@@ -70,4 +70,13 @@ class AdminController
         }
         header("Location: ../views/edit_client.php?id=" . $_SESSION["id-client"]);
     }
+
+    public function resultMenuProjects($result)
+    {
+        session_start();
+        if (sizeof($result) > 0) {
+            $_SESSION["clients"] = $result;
+        }
+        header("Location: ../views/menu_projects.php");
+    }
 }
