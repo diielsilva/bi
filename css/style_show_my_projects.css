@@ -30,3 +30,67 @@ html, body {
 .header a:hover {
     text-decoration: underline;
 }
+
+.main {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.main h1 {
+    margin: 10px;
+}
+
+.table {
+    border: none;
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.table td {
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 10px;
+}
+
+.first-row {
+    background-image: linear-gradient(to right, black, gray);
+}
+
+.first-row td {
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+.edit {
+    padding: 10px;
+    border: none;
+    background-color: blue;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    margin: 5px;
+    text-align: center;
+}
+
+.remove {
+    padding: 10px;
+    border: none;
+    background-color: red;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    margin: 5px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}

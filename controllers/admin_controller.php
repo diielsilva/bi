@@ -99,4 +99,15 @@ class AdminController
         }
         header("Location: ../views/show_my_projects.php?id=" . $_SESSION["id-client"]);
     }
+
+    public function resultRemoveProject($result)
+    {
+        session_start();
+        if ($result > 0) {
+            $_SESSION["success"] = "Projeto removido com sucesso";
+        } else {
+            $_SESSION["error"] = "Algo deu errado, tente novamente";
+        }
+        header("Location: ../views/show_my_projects.php?id=" . $_SESSION["id-client"]);
+    }
 }

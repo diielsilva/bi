@@ -23,9 +23,10 @@ include_once("../php/verify_admin_online.php");
             </ul>
         </header>
     </nav>
-    <main>
-        <table>
-            <tr>
+    <main class="main">
+        <h1>Meus Projetos</h1>
+        <table class="table">
+            <tr class="first-row">
                 <td>Nome</td>
                 <td>Descrição</td>
                 <td>Preço</td>
@@ -43,19 +44,20 @@ include_once("../php/verify_admin_online.php");
                     echo "<td>" . $_SESSION["projects"][$init]["price"] . "</td>";
                     echo "<td>" . $_SESSION["projects"][$init]["deadline"] . "</td>";
                     echo "<td>" . $_SESSION["projects"][$init]["status"] . "</td>";
-                    echo "<td><a><button>Editar &nbsp;<span class='fas fa-edit'></span></button></a></td>";
-                    echo "<td><a><button>Remover &nbsp;<span class='fas fa-folder-minus'></span></button></a></td>";
+                    echo "<td><a><button class='edit'>Editar &nbsp;<span class='fas fa-edit'></span></button></a></td>";
+                    echo "<td><a href='../php/remove_project.php?id=" . $_SESSION["projects"][$init]["id"] . "'><button class='remove'>Remover &nbsp;<span class='fas fa-folder-minus'></span></button></a></td>";
                 }
             }
+            unset($_SESSION["projects"]);
             ?>
         </table>
         <div>
             <?php
             if (isset($_SESSION["error"])) {
-                echo "<p>" . $_SESSION["error"] . "</p>";
+                echo "<p class='error'>" . $_SESSION["error"] . "&nbsp;<span class='fas fa-exclamation-circle'></span></p>";
                 unset($_SESSION["error"]);
             } else if (isset($_SESSION["success"])) {
-                echo "<p>" > $_SESSION["success"] . "</p>";
+                echo "<p class='success'>" . $_SESSION["success"] . "&nbsp;<span class='fas fa-check-circle></span></p>";
                 unset($_SESSION["success"]);
             }
             ?>
