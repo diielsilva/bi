@@ -34,6 +34,7 @@ include_once("../php/verify_admin_online.php");
                 <td>Status</td>
                 <td>Editar</td>
                 <td>Remover</td>
+                <td>Atrasado</td>
             </tr>
             <?php
             if (isset($_SESSION["projects"])) {
@@ -41,11 +42,19 @@ include_once("../php/verify_admin_online.php");
                     echo "<tr>";
                     echo "<td>" . $_SESSION["projects"][$init]["name"] . "</td>";
                     echo "<td>" . $_SESSION["projects"][$init]["description"] . "</td>";
-                    echo "<td>" . $_SESSION["projects"][$init]["price"] . "</td>";
-                    echo "<td>" . $_SESSION["projects"][$init]["deadline"] . "</td>";
+                    echo "<td> R$" . $_SESSION["projects"][$init]["price"] . "</td>";
+                    echo "<td>" . date("d/m/Y", strtotime($_SESSION["projects"][$init]["deadline"])) . "</td>";
                     echo "<td>" . $_SESSION["projects"][$init]["status"] . "</td>";
                     echo "<td><a href='edit_project.php?id=" . $_SESSION["projects"][$init]["id"] . "'><button class='edit'>Editar &nbsp;<span class='fas fa-edit'></span></button></a></td>";
                     echo "<td><a href='../php/remove_project.php?id=" . $_SESSION["projects"][$init]["id"] . "'><button class='remove'>Remover &nbsp;<span class='fas fa-folder-minus'></span></button></a></td>";
+                    $date = date("Y-m-d");
+                    $date2 = date("Y-m-d", strtotime($_SESSION["projects"][$init]["deadline"]));
+                    if ($date > $date2) {
+                        echo "<td>Sim</td>";
+                    } else {
+                        echo "<td>Não</td>";
+                    }
+                    echo "</tr>";
                 }
             }
             unset($_SESSION["projects"]);
