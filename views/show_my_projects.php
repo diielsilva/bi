@@ -44,7 +44,7 @@ include_once("../php/verify_admin_online.php");
                     echo "<td>" . $_SESSION["projects"][$init]["price"] . "</td>";
                     echo "<td>" . $_SESSION["projects"][$init]["deadline"] . "</td>";
                     echo "<td>" . $_SESSION["projects"][$init]["status"] . "</td>";
-                    echo "<td><a><button class='edit'>Editar &nbsp;<span class='fas fa-edit'></span></button></a></td>";
+                    echo "<td><a href='edit_project.php?id=" . $_SESSION["projects"][$init]["id"] . "'><button class='edit'>Editar &nbsp;<span class='fas fa-edit'></span></button></a></td>";
                     echo "<td><a href='../php/remove_project.php?id=" . $_SESSION["projects"][$init]["id"] . "'><button class='remove'>Remover &nbsp;<span class='fas fa-folder-minus'></span></button></a></td>";
                 }
             }

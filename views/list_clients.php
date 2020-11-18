@@ -67,6 +67,5 @@ include_once("../php/verify_admin_online.php");
     </main>
 </body>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<script src="../scripts/pdf.js"></script>
 
 </html>

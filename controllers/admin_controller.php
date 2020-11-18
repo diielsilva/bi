@@ -110,4 +110,15 @@ class AdminController
         }
         header("Location: ../views/show_my_projects.php?id=" . $_SESSION["id-client"]);
     }
+
+    public function resultUpdateProject($result)
+    {
+        session_start();
+        if ($result > 0) {
+            $_SESSION["success"] = "Projeto alterado com sucesso";
+        } else {
+            $_SESSION["error"] = "Algo deu errado, tente novamente";
+        }
+        header("Location: ../views/edit_project.php?id=" . $_SESSION["id-project"]);
+    }
 }

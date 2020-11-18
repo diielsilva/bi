@@ -127,4 +127,20 @@ class Project
         $this->result = $this->stmt->rowCount();
         return $this->result;
     }
+
+    public function updateProjetc(Project $project)
+    {
+        $this->connection = new Connection();
+        $this->connection = $this->connection->openConnection();
+        $this->query = "UPDATE projects SET description=?, price=?, deadline=? , status=? WHERE id=?";
+        $this->stmt = $this->connection->prepare($this->query);
+        $this->stmt->bindValue(1, $project->getDescription());
+        $this->stmt->bindValue(2, $project->getPrice());
+        $this->stmt->bindValue(3, $project->getDeadline());
+        $this->stmt->bindValue(4, $project->getStatus());
+        $this->stmt->bindValue(5, $project->getId());
+        $this->stmt->execute();
+        $this->result = $this->stmt->rowCount();
+        return $this->result;
+    }
 }
