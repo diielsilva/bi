@@ -102,4 +102,29 @@ class Project
         $this->result = $this->stmt->rowCount();
         return $this->result;
     }
+
+    public function getMyProjects(Client $client)
+    {
+        $this->connection = new Connection();
+        $this->connection = $this->connection->openConnection();
+        $this->query = "SELECT * FROM projects WHERE client_project=?";
+        $this->stmt = $this->connection->prepare($this->query);
+        $this->stmt->bindValue(1, $client->getId());
+        $this->stmt->execute();
+        $this->result = $this->stmt->fetchAll();
+        return $this->result;
+    }
+
+    public function deleteProject(Project $project, Client $client)
+    {
+        $this->connection = new Connection();
+        $this->connection = $this->connection->openConnection();
+        $this->query = "DELETE FROM projects WHERE id=? AND client_project=?";
+        $this->stmt = $this->connection->prepare($this->query);
+        $this->stmt->bindValue(1, $project->getId());
+        $this->stmt->bindValue(2, $client->getId());
+        $this->stmt->execute();
+        $this->result = $this->stmt->rowCount();
+        return $this->result;
+    }
 }

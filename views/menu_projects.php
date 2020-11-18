@@ -38,8 +38,8 @@ include_once("../php/verify_admin_online.php");
                     echo "<tr>";
                     echo "<td>" . $_SESSION["clients"][$init]["company_name"] . "</td>";
                     echo "<td>" . $_SESSION["clients"][$init]["cnpj"] . "</td>";
-                    echo "<td><a href='add_project.php?id=".$_SESSION["clients"][$init]["id"]."'><button class='add'>Adc. Projeto &nbsp; <span class='fas fa-folder-plus'></span></button></a></td>";
-                    echo "<td><a href=''><button class='projects'>Meus Projetos &nbsp; <span class='fas fa-folder-open'></span></button></a></td>";
+                    echo "<td><a href='add_project.php?id=" . $_SESSION["clients"][$init]["id"] . "'><button class='add'>Adc. Projeto &nbsp; <span class='fas fa-folder-plus'></span></button></a></td>";
+                    echo "<td><a href='../php/show_my_projects.php?id=" . $_SESSION["clients"][$init]["id"] . "'><button class='projects'>Meus Projetos &nbsp; <span class='fas fa-folder-open'></span></button></a></td>";
                     echo "</tr>";
                 }
             }

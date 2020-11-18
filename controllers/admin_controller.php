@@ -90,4 +90,13 @@ class AdminController
         }
         header("Location: ../views/add_project.php?id=" . $_SESSION["id-client"]);
     }
+
+    public function resultGetMyProjects($result)
+    {
+        session_start();
+        if (sizeof($result) > 0) {
+            $_SESSION["projects"] = $result;
+        }
+        header("Location: ../views/show_my_projects.php?id=" . $_SESSION["id-client"]);
+    }
 }

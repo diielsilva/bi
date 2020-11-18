@@ -42,9 +42,9 @@ include_once("../php/verify_admin_online.php");
             <div>
                 <select name="status" required>
                     <option value="" selected disabled>Status</option>
-                    <option value="under_analysis">Em análise</option>
-                    <option value="dissaproved">Reprovado</option>
-                    <option value="approvded">Aprovado</option>
+                    <option value="Em análise">Em análise</option>
+                    <option value="Reprovado">Reprovado</option>
+                    <option value="Aprovado">Aprovado</option>
                 </select>
             </div>
             <div>
